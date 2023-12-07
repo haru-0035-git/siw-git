@@ -1,0 +1,60 @@
+def execute():
+    #
+    #学生表示プログラム
+    #studentテーブルからすべてのレコ―ドを取得して表示
+    #
+    import sys
+    sys.dont_write_bytecode = True
+    import mysql.connector
+    from util import dbutil
+
+    #
+    #1)初期処理
+    #
+    #MySQLに接続
+
+    cnx = dbutil.connect()
+
+    #コネクションが切れたときに再接続する
+    cnx.ping(reconnect=True)
+
+    #
+    #2) 検索SQLを作成
+    #
+
+    sql = 'select * from student order by id asc'
+
+    #
+    #3)SQL実行
+    #
+
+    try:
+        #カーソルを作成
+        cursor = cnx.cursor(dictionary=True)
+        
+        #SQLを実行する
+        cursor.execute(sql)
+
+        #
+        #4)取得したレコードを全て表示
+        #
+        rows = cursor.fetchall()
+        for row in rows:
+            print(f'{row["id"]}:{row["name"]}')
+
+    except mysql.connector.Error as e:
+        print('エラーが発生しました')
+        print(e)
+
+
+    #
+    #5)終了処理
+    #
+
+    finally:
+        cursor.close()
+        cnx.close()
+
+
+if __name__ == '__main__':
+    execute()

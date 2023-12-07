@@ -1,0 +1,64 @@
+#
+#成績更新プログラム
+#examテーブルにキーボードで入力した情報を更新する
+#
+
+import sys
+sys.dont_write_bytecode = True
+import mysql.connector
+from util import dbutil
+from util import inpututil
+
+#
+#1)初期処理
+#
+#MySQLに接続
+
+cnx = dbutil.connect()
+
+#
+#2)キーボードから入力
+#
+print('成績更新')
+id = input('IDを入力してください>>')
+subject = input('科目を入力してください>>')
+score = input('点数を入力してください>>')
+
+
+#
+#3) 検索SQLを作成
+#
+#後から設定したい値は%sに置き換える
+sql = 'update exam set score = %s where id = %s and subject = %s'
+#設定したい値はリストにする
+data = [subject,score,id]
+
+#
+#4)SQL実行
+#
+
+try:
+    #カーソルを作成
+    cursor = cnx.cursor(dictionary=True)
+    
+    #SQLを実行する(SQLの文字列、値のリスト)
+    cursor.execute(sql, data)
+
+    #
+    #5)結果を表示
+    #
+    cnx.commit()
+    print(f'ID={id}を更新しました')
+except mysql.connector.Error as e:
+    print('エラーが発生しました')
+    print(e)
+
+
+#
+#5)終了処理
+#
+
+finally:
+    cursor.close()
+    cnx.close()
+
