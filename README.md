@@ -1,2 +1,2 @@
 # siw-git
-privete
+private
