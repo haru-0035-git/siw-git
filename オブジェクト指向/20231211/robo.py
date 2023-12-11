@@ -18,14 +18,14 @@ class Robot:
             except :
                 print('整数で入力してください')
         print(f'xに{x}歩、yに{y}歩進んだ')
-        self.a = self.a + x +5
+        self.a = self.a + x
         self.b = self.b + y
     def sum_walk(self):
-        print(f'現在の座標はx:{self.a}、y:{self.b}')
+        print(f'現在の座標はx:{self.a + 5}、y:{self.b}')
 
-robo1 = Robot()
-robo1.walk()
-robo1.sum_walk()
+# robo1 = Robot()
+# robo1.walk()
+# robo1.sum_walk()
 
 
 
@@ -34,9 +34,14 @@ class Battery(Robot):
         super().__init__()
         self.battery = hp
     def batte(self):
-        battery = self.a + self.b
-        self.battery -= battery
-        print(f'現在の充電残量は{self.hp}')
+        if self.a < 0 :
+            self.a = self.a * -1
+        if self.b < 0:
+            self.b = self.b * -1
+        battery = self.a + self.b 
+        print(battery)
+        self.battery -= battery 
+        print(f'現在の充電残量は{self.battery}')
 
 robo2 = Battery()
 robo2.walk()
