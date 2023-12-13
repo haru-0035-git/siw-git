@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>インプレス いちばんやさしいJavaScriptの教本</title>
+<link rel="stylesheet" href="slick/slick.css">
+<link rel="stylesheet" href="slick/slick-theme.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-loader">
+      <div class="spinner"></div>
+    </div>
+     
+    <div>
+      <p><img src="img/1.jpg" alt=""></p>
+      <p><img src="img/2.jpg" alt=""></p>
+      <p><img src="img/3.jpg" alt=""></p>
+    </div>
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script>
+    // ページのロード完了時にローディング画面をフェードアウト
+    $(window).on('load', function() {
+      $(".page-loader").fadeOut('fast');
+    });
+    </script>
+    </body>
