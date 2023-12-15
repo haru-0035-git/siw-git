@@ -12,6 +12,18 @@ def input_int(prompt):
         break
     return int(str)
 
+#キーボードの入力内容をfloatで返す
+def input_float(prompt):    
+    while True:
+        str = input(prompt)
+    # 数値チェック
+        if not float(str):
+            print('エラー！！:整数を入力してください')
+            # exit(1)#1は異常終了　0は正常終了
+            continue
+        break
+    return float(str)
+
 #キーボードの入力内容を日付で返す
 def input_date(prompt):
     while True:
