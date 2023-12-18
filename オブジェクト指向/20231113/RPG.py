@@ -13,7 +13,7 @@ class Hero():
     def mao_attack(self,enemy):
         enemy.hp -= self.power * 1.5 
         print(f'の魔法が炸裂')
-        print(f'{enemy.name}のHPは{enemy.hp}')
+        print(f'{self.name}のHPは{enemy.hp}')
 
 hero = Hero('アフラ・マズダー',200,40,20)
 mao = Hero('アンリマユ',200,30,20)
