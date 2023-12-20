@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作のサンプル</title>
+</head>
+<body>
+    <button id="myButton">新しい段落を追加</button>
+    <script>
+    var button = document.getElementById('myButton');
+    button.addEventListener('click', function() {         // 新しい<p>要素を作成         
+        var newParagraph = document.createElement("p");          // 新しいテキストノードを作成し、それを<p>要素に追加         
+            var text = document.createTextNode("これは新しく追加された段落です。");         
+            newParagraph.appendChild(text);          // <body>要素に新しい<p>要素を追加     
+            document.body.appendChild(newParagraph);     });
+    </script>
+</body>
+</html>

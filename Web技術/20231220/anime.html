@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOMアニメーションのサンプル</title>
+<style>
+#animateBox {
+width: 50px;
+height: 50px;
+background-color: red;
+position: absolute;
+left: 0px;
+}
+</style>
+</head>
+<body>
+<button id="startButton">アニメーション開始</button>
+<div id="animateBox"></div>
+<script>
+// アニメーションを実行する関数
+function startAnimation() {
+var elem = document.getElementById("animateBox");
+var pos = 0;
+var id = setInterval(frame, 5);
+function frame() {
+if (pos == 350) {
+clearInterval(id);
+} else {
+pos++;
+elem.style.left = pos + 'px';
+}
+}
+}
+// ボタンにクリックイベントリスナーを追加
+document.getElementById("startButton").addEventListener("click", startAnimation);
+</script>
+</body>
+</html>
