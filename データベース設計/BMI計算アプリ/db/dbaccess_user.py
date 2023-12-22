@@ -15,9 +15,19 @@ def add_user(cursor,name,birthday,height,target_weight):
 
     dbutil.triming_name(cursor)
 
-def updata_weight(cursor,name,height):
+def updata_height(cursor,name,height):
     sql = 'update users set height = %s'
     data = [height]
     cursor.execute(sql,data)
     
 
+def updata_targetweight(cursor,name,weight):
+    sql = 'update users set target_weight = %s'
+    data = [weight]
+    cursor.execute(sql,data)
+
+def delete_user(cursor,name):
+    sql = 'delete from users where name = %s'
+    data = [name]
+    cursor.execute(sql,data)
+    

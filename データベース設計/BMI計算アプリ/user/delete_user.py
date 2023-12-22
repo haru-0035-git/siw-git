@@ -1,4 +1,4 @@
-def select_allditail():
+def delete_user():
     import sys
     import os
     sys.dont_write_bytecode = True
@@ -11,9 +11,9 @@ def select_allditail():
     cnx = dbutil.connect()
     try:
         cursor = cnx.cursor(dictionary=True)
-        print('★★★ユーザ表示★★★')
+        print('★★★ユーザ削除★★★')
         while True:
-            name = input('ユーザ名を入力してください:')
+            name = input('ユーザ名を入力してください : ')
             rows = dbutil.find_by_name(cursor,name)
             if len(rows) == 1:
                 break
@@ -25,8 +25,16 @@ def select_allditail():
             print(f'生年月日：{row["birthday"]}')
             print(f'身長：{row["height"]}')
             print(f'目標体重：{row["target_weight"]}')
-
-
+##############################################################################
+        juge = input('このデータを全て削除してもよろしいですか? (y/n)>>')
+        if juge.lower() == 'y':   
+            dbaccess_user.delete_user(cursor,name)
+            cnx.commit()
+            print('削除しました')
+        elif juge.lower() == 'n':
+            return None
+        else:
+            print('y/n のみで')
     except mysql.connector.Error as e:
         print('エラーが発生しました')
         print(e)
@@ -35,4 +43,4 @@ def select_allditail():
         cnx.close()
 
 if __name__ == '__main__':
-    select_allditail()
+    delete_user()

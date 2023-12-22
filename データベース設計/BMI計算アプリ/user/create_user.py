@@ -6,7 +6,7 @@ def add_user():
     import mysql.connector
     from util import dbutil
     from util import inpututil
-    from db   import dbaccess_users
+    from db   import dbaccess_user
 
     cnx = dbutil.connect()
     try:
@@ -22,7 +22,7 @@ def add_user():
         birthday = inpututil.input_date('生年月日を入力してください [%Y-%m-%d] : ')
         weight = inpututil.input_float('身長を入力してください (cm) : ')
         target_weight = inpututil.input_float('目標の体重を入力してください(kg) : ')
-        dbaccess_users.add_user(cursor,name,birthday,weight,target_weight)
+        dbaccess_user.add_user(cursor,name,birthday,weight,target_weight)
         cnx.commit()
         print('ユーザーを登録しました')
     except mysql.connector.Error as e:

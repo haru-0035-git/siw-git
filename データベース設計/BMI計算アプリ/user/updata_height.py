@@ -1,4 +1,4 @@
-def update_weight():
+def update_height():
     import sys
     import os
     sys.dont_write_bytecode = True
@@ -6,7 +6,7 @@ def update_weight():
     import mysql.connector
     from util import dbutil
     from util import inpututil
-    from db   import dbaccess_users
+    from db   import dbaccess_user
 
     cnx = dbutil.connect()
     try:
@@ -20,7 +20,7 @@ def update_weight():
             else:
                 print('[Error] そのユーザ名は存在しません')
         weight = inpututil.input_float('身長を入力してください (cm) : ')
-        dbaccess_users.updata_weight(cursor,name,weight)
+        dbaccess_user.updata_height(cursor,name,weight)
         cnx.commit()
         print('ユーザーの身長を更新しました')
     except mysql.connector.Error as e:
@@ -31,4 +31,4 @@ def update_weight():
         cnx.close()
 
 if __name__ == '__main__':
-    update_weight()
+    update_height()

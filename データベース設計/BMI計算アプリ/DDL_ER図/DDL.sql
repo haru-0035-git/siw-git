@@ -14,13 +14,16 @@ drop Table if EXISTS weight_records;
 CREATE TABLE weight_records(
     id                      int                AUTO_INCREMENT ,
     user_name               VARCHAR(32)        NOT NULL,
+    height                  DECIMAL(4,1)       NOT NULL,
     weight                  DECIMAL(4,1)       NOT NULL,
-    user_height             DECIMAL(4,1)       NOT NULL,
-    user_targetweight       DECIMAL(4,1)       NOT NULL,
     datetime                DATE               NOT NULL,
-    user_id                 INT                NOT NULL,
+    target_weight           DECIMAL(4,1)       NOt NULL,
     PRIMARY KEY (id)
 ) COMMENT = '体重登録マスタ';
 
 ALTER Table users ADD 
   Foreign Key (user_name) REFERENCES users(name);
+
+SELECT * from users;
+
+SELECT * from weight_records;

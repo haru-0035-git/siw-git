@@ -3,10 +3,12 @@ def execute():
     sys.dont_write_bytecode = True
     import os
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    from db import dbaccess_users
+    from db   import dbaccess_user
     from user import create_user
-    from user import select_all
-    from user import updata_weight
+    from user import select_user
+    from user import updata_targetweight
+    from user import updata_height
+    from user import delete_user
     
     print('===ユーザ管理メニュー===')
     print('1.ユーザ登録')
@@ -20,13 +22,13 @@ def execute():
         if judgment == '1':
             create_user.add_user()
         elif judgment == '2':
-            select_all.select_all()
+            select_user.select_allditail()
         elif judgment == '3':
-            updata_weight.update_weight()
+            updata_height.update_height()
         elif judgment == '4':
-            select_all.select_all()
+            updata_targetweight.update_target()
         elif judgment == '5':
-            select_all.select_all()
+            delete_user.delete_user()
         else:
             break
         
