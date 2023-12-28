@@ -39,7 +39,7 @@ def add_weight():
             print(f'身長:{height}cm')
             print(f'体重:{weight}kg')
             print(f'BMI:{bmi[0]}')
-            print(f'標準体重:{bmi[2]}kg (あと{round((bmi[2]-weight),1)}kg)')
+            print(f'標準体重:{round((bmi[2]),1)}kg (あと{round((bmi[2]-weight),1)}kg)')
             print(f'肥満度:{bmi[1]}')
             print(f'目標体重:{target_weight}kg (あと{round((target_weight-weight),1)}kg)')
             print('体重を記録しました')
