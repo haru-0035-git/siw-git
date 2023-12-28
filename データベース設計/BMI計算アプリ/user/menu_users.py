@@ -11,13 +11,13 @@ def execute():
     from user import delete_user
     
     print('===ユーザ管理メニュー===')
-    print('1.ユーザ登録')
-    print('2.ユーザ表示')
-    print('3.身長更新')
-    print('4.目標体重更新')
-    print('5.ユーザ削除')
-    print('6.終了')
     while True:
+        print('1.ユーザ登録')
+        print('2.ユーザ表示')
+        print('3.身長更新')
+        print('4.目標体重更新')
+        print('5.ユーザ削除')
+        print('6.終了')
         judgment = input('メニューを選択してください：')
         if judgment == '1':
             create_user.add_user()
@@ -29,8 +29,11 @@ def execute():
             updata_targetweight.update_target()
         elif judgment == '5':
             delete_user.delete_user()
-        else:
+        elif judgment == '6':
             break
+        else:
+            print('1~6まで')
+            continue
         
 
 

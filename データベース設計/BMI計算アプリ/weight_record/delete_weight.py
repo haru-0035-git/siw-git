@@ -33,7 +33,6 @@ def delete_user():
             target_weight=float(row["target_weight"])
         rows = dbaccess_weightrecord.find_by_id_name(cursor,name,id)
         weight = float(rows[0]["weight"])
-        print(weight)
         bmi=dbaccess_weightrecord.bmi(height,weight)
         date = datetime.datetime.now()
         date = date.strftime('%Y-%m-%d %H:%M:%S')

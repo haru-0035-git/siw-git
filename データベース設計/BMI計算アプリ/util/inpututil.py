@@ -36,3 +36,18 @@ def input_date(prompt):
             continue
         break
     return str
+
+def input_datetime(prompt):
+    while True:
+        str = input(prompt)
+        #日付チェック
+        try:
+            datetime.datetime.strptime(str,'%Y-%m')
+        except ValueError:
+            print('エラー！！！：日付で入力してください')
+            continue
+        break
+    return str
+
+if __name__ == "__main__":
+    input_datetime()

@@ -1,4 +1,4 @@
--- Active: 1696486038674@@127.0.0.1@3306@bmi_calculation
+-- Active: 1699190975827@@127.0.0.1@3306@bmi_calculation
 drop table if EXISTS users ;
 CREATE table users(
     id              int               not NULL   auto_increment,
@@ -16,7 +16,7 @@ CREATE TABLE weight_records(
     user_name               VARCHAR(32)        NOT NULL,
     height                  DECIMAL(4,1)       NOT NULL,
     weight                  DECIMAL(4,1)       NOT NULL,
-    datetime                DATE               NOT NULL,
+    datetime                DATETIME           NOT NULL,
     target_weight           DECIMAL(4,1)       NOt NULL,
     PRIMARY KEY (id)
 ) COMMENT = '体重登録マスタ';
