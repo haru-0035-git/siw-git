@@ -55,7 +55,7 @@ def delete_id(cursor,name,id):
     cursor.execute(sql,data)
 
 def show_score(cursor,day,name):
-    sql = 'SELECT * from weight_records WHERE date_format(datetime,"%Y-%m") = %s AND user_name = %s'
+    sql = 'SELECT * from weight_records WHERE date_format(datetime,"%Y-%m") = %s AND user_name = %s order by id asc'
     date = [day,name]
     cursor.execute(sql,date)
     rows = cursor.fetchall()
