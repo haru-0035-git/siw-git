@@ -20,7 +20,7 @@ def show_weight():
             else:
                 print('[Error] そのユーザは存在しません')
                 continue
-        date = inpututil.input_datetime('出力する年月を入力してください : ')
+        date = inpututil.input_datetime('出力する年月を入力してください [%Y-%m]: ')
         rows=dbaccess_weightrecord.show_score(cursor,date,name)
         dbaccess_weightrecord.output_html(rows,name)
         print()

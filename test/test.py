@@ -1,30 +1,24 @@
-from random import shuffle
-import sys
-class Card:
-    suits = ['♣','♠','♥','♦']
-    ranks = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
-    def __init__(self,s,r):
-        self.suit = s
-        self.rank = r
-    def __int__(self):
-        r = self.ranks[self.rank]
-        if r == "J" or r == "Q" or r == "K":
-            r = 10
-        elif r == "A":
-            r = 1
-        return int(r)
+import PySimpleGUI as sg
+import math
+sg.theme("DarkBrown3")
 
-class Deck:
-    def __init__(self):
-        self.cards = []
-        for i in range(1,14):
-            for j in range(4):
-                self.cards.append(Card(i,j))
-        shuffle(self.cards)
-    def draw(self):
-        if len(self.cards) == 0:
-            return 
-        return self.cards.pop()
+layout = [[sg.T("金額と人数を入力してください。")],
+          [sg.T("金額"),sg.I("", k="in1")],
+          [sg.T("人数"),sg.I("", k="in2")],
+          [sg.B(" 実行 ", k="btn"), sg.T(k="txt")]]
+win = sg.Window("割り勘アプリ", layout,
+                font=(None,14), size=(320,150))
 
-player1 = Deck()
-print(player1.draw())
+def execute():
+    in1 = int(v["in1"])
+    in2 = int(v["in2"])
+    txt = f"1人、{math.floor(in1 / in2)}円です。"
+    win["txt"].update(txt)
+
+while True:
+    e, v = win.read()
+    if e == "btn":
+      execute()
+    if e == None:
+        break
+win.close()

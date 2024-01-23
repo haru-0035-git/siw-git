@@ -8,8 +8,8 @@ def connect():
     cnx = mysql.connector.connect(
         host = 'localhost',
         user = 'root',
-        # password = 'password',
-        password = 'ToMoYo4869',
+        password = 'password',
+        # password = 'ToMoYo4869',
         database = 'BMI_calculation',
         auth_plugin="mysql_native_password",
     )

@@ -1,4 +1,4 @@
--- Active: 1699190975827@@127.0.0.1@3306@bmi_calculation
+-- Active: 1696486038674@@127.0.0.1@3306@bmi_calculation
 drop table if EXISTS users ;
 CREATE table users(
     id              int               not NULL   auto_increment,
@@ -21,7 +21,7 @@ CREATE TABLE weight_records(
     PRIMARY KEY (id)
 ) COMMENT = '体重登録マスタ';
 
-ALTER Table users ADD 
+ALTER Table weight_records ADD constraint weight_record_fk1
   Foreign Key (user_name) REFERENCES users(name);
 
 SELECT * from users;
