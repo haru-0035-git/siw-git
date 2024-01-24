@@ -50,3 +50,39 @@ with st.form(key='profile_form_2'):
         st.text(f'趣味：{",".join(hobby)}')
     if cancel_btn:     
         st.text('キャンセルされました。')
+
+st.button("button")
+st.selectbox("selectbox", ("select1", "select2"))
+st.multiselect("multiselectbox", ("select1", "select2"))
+st.radio("radiobutton", ("radio1", "radio2"))
+ # 以下をサイドバーに表示
+st.sidebar.text_input("text input")
+st.sidebar.text_area("text area")
+st.sidebar.slider("slider", 0, 100, 50)
+st.sidebar.file_uploader("Choose file")
+
+#表で表示
+import pandas as pd
+st.title('あぷり')
+st.text('本日はお日柄も良く')
+df = pd.read_csv(f'{os.path.dirname(__file__)}/temp.csv', index_col='mon')
+st.dataframe(df)
+
+#グラフで表示
+st.title('あぷり')
+st.text('本日はお日柄も良く')
+df = pd.read_csv(f'{os.path.dirname(__file__)}/temp.csv', index_col='mon')
+st.line_chart(df)
+
+
+#matplotlibで表示
+import matplotlib.pyplot as plt
+st.title('あぷり')
+st.text('本日はお日柄も良く')
+df = pd.read_csv(f'{os.path.dirname(__file__)}/temp.csv', index_col='mon') 
+
+fig,ax = plt.subplots()
+ax.plot(df.index,df['2022'])
+ax.plot(df.index,df['2023'])
+ax.set_title('matplotlib graph')
+st.pyplot(fig)
