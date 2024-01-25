@@ -1,29 +1,61 @@
 from random import randint
-class Card:
-    def __init__(self):
-        self.rank = randint(0,12)
-    def card(self):
-        ranks = ['A',2,3,4,5,6,7,8,9,10,'J','Q','K']
-        return ranks[self.rank]
 
+class Deck:
+    RANKS = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
+
+    def __init__(self):
+        self.dealer_rank = randint(0, 12)
+        self.player_rank = randint(0, 12)
+
+    def get_dealer_card(self):
+        return self.RANKS[self.dealer_rank]
+
+    def get_player_card(self):
+        return self.RANKS[self.player_rank]
+
+def convert_rank(card):
+    if card == 'A':
+        return 1
+    elif card == 'J':
+        return 11
+    elif card == 'Q':
+        return 12
+    elif card == 'K':
+        return 13
+    else:
+        return card
+
+def compare_cards(dealer, player, user_guess):
+    dealer = convert_rank(dealer)
+    player = convert_rank(player)
+
+    if dealer < player and user_guess == 'h':
+        return 'プレイヤーの勝ち'
+    elif dealer > player and user_guess == 'h':
+        return 'プレイヤーの負け'
+    if dealer > player and user_guess == 'l':
+        return 'プレイヤーの勝ち'
+    elif dealer < player and user_guess == 'l':
+        return 'プレイヤーの負け'
+    if dealer == player:
+        return 'DROW'
 
 j = 0
 d = 0
 p = 0
-while j < 10:   
-    player1 = Card()
-    dealer = player1.card()
-    player2 = Card()
-    player = player2.card()
+
+while j < 10:
+    deck = Deck()
+    dealer = deck.get_dealer_card()
+    player = deck.get_player_card()
 
     while True:
         print('*************')
         print(f'    {dealer}')
         print('*************')
-        r = (input('high and low? h/l >>'))
-        if r == 'h':
-            break
-        elif r == 'l':
+        user_guess = input('high and low? h/l >>')
+
+        if user_guess == 'h' or user_guess == 'l':
             break
         else:
             print('h or l')
@@ -33,45 +65,19 @@ while j < 10:
     print(f'    {player}')
     print('*************')
 
-    if dealer == 'A':
-        dealer = 1
-    elif dealer == 'J':
-        dealer = 11
-    elif dealer == 'Q':
-        dealer = 12
-    elif dealer == 'K':
-        dealer = 13
+    result = compare_cards(dealer, player, user_guess)
+    print(result)
 
-    if player == 'A':
-        player = 1
-    elif player == 'J':
-        player = 11
-    elif player == 'Q':
-        player = 12
-    elif player == 'K':
-        player = 13
-
-
-
-    if dealer < player and r == 'h':
-        print('プレイヤーの勝ち')
+    if '勝ち' in result:
         p += 1
-    elif dealer > player and r == 'h':
-        print('プレイヤーの負け')
+    elif '負け' in result:
         d += 1
-    if dealer > player and r == 'l':
-        print('プレイヤーの勝ち')
-        p += 1
-    elif dealer < player and r == 'l':
-        print('プレイヤーの負け')
-        d += 1
-    if dealer == player:
-        print('DROW')
-    
+
     j += 1
 
 print(f'プレイヤーの勝利数は{p}回')
 print(f'ディーラーの勝利数は{d}回')
+
 if p > d:
     print('プレイヤーの勝利！')
 else:
