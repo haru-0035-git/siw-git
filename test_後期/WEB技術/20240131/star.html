@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas_1" width="300" height="300">
+    </canvas>
+    <script>
+        //図形1
+        let canvas_1 = document.getElementById("myCanvas_1");
+        let ctx_1 = canvas_1.getContext("2d");
+        
+        ctx_1.beginPath();
+        ctx_1.moveTo(50,100);
+        ctx_1.lineTo(150,100);
+        ctx_1.lineTo(65,170);
+        ctx_1.lineTo(100,55);
+        ctx_1.lineTo(135,170);
+        ctx_1.lineTo(50,100);
+        
+        ctx_1.stroke();
+        </script>
+    <canvas id="myCanvas_2" width="300" height="300">
+    </canvas>
+        <script>
+            //図形2
+            let canvas_2 = document.getElementById("myCanvas_2");
+            let ctx_2 = canvas_2.getContext("2d");
+            
+            ctx_2.beginPath();
+            ctx_2.moveTo(60,150);
+            ctx_2.lineTo(140,150);
+            ctx_2.lineTo(100,225);
+            ctx_2.lineTo(60,150);
+            ctx_2.stroke();
+            
+            ctx_2.beginPath();
+            ctx_2.moveTo(100,125);
+            ctx_2.lineTo(140,200);
+            ctx_2.lineTo(60,200);
+            ctx_2.lineTo(100,125);
+            
+            ctx_2.stroke();
+            
+            </script>
+    <canvas id="myCanvas_3" width="300" height="300">
+    </canvas>
+    <script>
+        //図形2 
+        let canvas_3 = document.getElementById("myCanvas_3")
+        let ctx_3 = canvas_3.getContext("2d");
+        
+    ctx_3.beginPath();
+    ctx_3.arc(150,150,100,0,Math.PI*2,true)
+    ctx_3.closePath();
+    ctx_3.stroke();
+    ctx_3.beginPath();
+    ctx_3.arc(150,165,85,0,Math.PI*2,true)
+    ctx_3.closePath();
+    ctx_3.stroke();
+    
+    ctx_3.beginPath();
+    ctx_3.ellipse(125,100,30,20,Math.PI/2,0,Math.PI*2);
+    ctx_3.closePath();
+    ctx_3.stroke();
+    
+    ctx_3.beginPath();
+    ctx_3.ellipse(175,100,30,20,Math.PI/2,0,Math.PI*2);
+    ctx_3.closePath();
+    ctx_3.stroke();
+    
+    ctx_3.beginPath();
+    ctx_3.arc(150,150,15,0,Math.PI*2,true)
+    ctx_3.closePath();
+    ctx_3.stroke();
+
+    ctx_3.beginPath();
+    ctx_3.moveTo(150,166);
+    ctx_3.lineTo(150,195);
+    
+    ctx_3.stroke();
+    </script>
+</body>
+</html>
