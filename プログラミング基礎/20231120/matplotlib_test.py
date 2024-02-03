@@ -1,13 +1,30 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# import numpy as np 
+# import matplotlib.pyplot as plt  
+# x=np.array(range(0, 10))
+# print(x) 
+# y=x 
+# plt.plot(x, y) 
+# plt.show()
+# import numpy as np 
+# import matplotlib.pyplot as plt  
+# x = np.arange(-np.pi,np.pi,0.1) 
+# y = np.sin(x) 
+# print(x[:10]) 
+# print(y[:10])  
+# plt.plot(x, y) 
+# plt.show()
+
 x = np.arange(-2*np.pi,2*np.pi,0.2)
 y0 = np.sin(x)
-# y1 = np.cos(x)
-y1 = np.tan(x)
+y1 = np.cos(x)
+# # y1 = np.tan(x)
 # plt.plot(x,y0,label = 'y = sin(x)')
 # plt.plot(x,y1,label = 'y = cos(x)')
 # plt.legend()
+# plt.show()
 
 #表示エリアを設定
 # plt.xlim([3, 5])
@@ -90,22 +107,22 @@ y1 = np.tan(x)
 # plt.show()
 
 #ヒストグラムに確率密度曲線の表示
-from scipy.stats import norm
-(sigma, mu) = (10, 50)
-value = np.random.randn(1000)*sigma+mu
-(n, bins, patches) = plt.hist(value, 50, density=True)
-plt.plot(bins, norm.pdf(bins, loc=mu, scale=sigma))
-plt.show()
+# from scipy.stats import norm
+# (sigma, mu) = (10, 50)
+# value = np.random.randn(1000)*sigma+mu
+# (n, bins, patches) = plt.hist(value, 50, density=True)
+# plt.plot(bins, norm.pdf(bins, loc=mu, scale=sigma))
+# plt.show()
 
 #散布図
-# from scipy.stats import norm
-# (n,sigma, mu) = (300, 10, 50)
-# x = np.random.randn(n) * sigma + mu
-# y = np.random.randn(n) * sigma + mu
-# c = np.random.rand(n)
-# s = np.random.rand(n)**2 * np.pi * 100
-# plt.scatter(x, y, s=s, c=c, alpha=0.25)
-# plt.show()
+from scipy.stats import norm
+(n,sigma, mu) = (300, 10, 50)
+x = np.random.randn(n) * sigma + mu
+y = np.random.randn(n) * sigma + mu
+c = np.random.rand(n)
+s = np.random.rand(n)**2 * np.pi * 100
+plt.scatter(x, y, s=s, c=c, alpha=0.25)
+plt.show()
 
 #3Dグラフ
 # from mpl_toolkits.mplot3d import Axes3D

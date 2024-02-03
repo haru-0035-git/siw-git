@@ -1,4 +1,4 @@
-from sympy import * 
+from sympy import *
 import math 
 
 # a  = 12 * 36
@@ -22,15 +22,15 @@ import math
 # print(b3)
 
 #定数
-# a=Rational(1,3)
-# print(N(pi,30))
-# print(N(E,20))
-# print(N(oo, 30))
+# a=sy.Rational(1,3)
+# print(sy.N(math.pi,30))
+# print(sy.N(sy.E,20))
+# print(sy.N(sy.oo, 30))
+#平方根
 # a5 = sqrt(32)
 # b4 = sqrt(24)
 # pprint(a5*b4)
 
-#平方根
 # x = Symbol('x')
 # res = x**2 +4*x -6
 # print(res)
@@ -91,7 +91,7 @@ import math
 # print(re2)
 # print(solve((re1,re2)))
 
-x  = Symbol('x')
+# x  = Symbol('x')
 # y = sin(x)/x
 # lim_y = limit(y, x, 0)
 # print(lim_y)
