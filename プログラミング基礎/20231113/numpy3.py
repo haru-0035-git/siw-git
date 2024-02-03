@@ -52,15 +52,16 @@ import numpy.linalg as LA
 
 
 import numpy as np
-# import os
-# score = np.loadtxt(f'{os.path.dirname(__file__)}\seiseki.csv',delimiter=',')
-# # print(score)
-# print(np.mean(score,axis=0))
+import os
+score = np.loadtxt(f'{os.path.dirname(__file__)}\seiseki.csv',delimiter=',')
+# print(score)
+print(np.mean(score,axis=1))
 # print(np.max(score,axis=0))
 # print(np.min(score,axis=0))
 # print(np.median(score,axis=0))
 # print(np.var(score,axis=0))
 # print(np.std(score,axis=0))
+
 
 # score = np.loadtxt('weather.csv',delimiter=',')
 # # print(score)
@@ -74,8 +75,8 @@ import numpy as np
 # score = np.loadtxt('fm08_m_1.csv',delimiter=',')
 # print(score)
 
-import numpy as np
-score = np.loadtxt('lake.csv',delimiter=',')
-print(score)
-print(f'平均深度は{np.mean(score[:,1])}mです')
-print(f'最大面積は{np.max(score[:,0])}m^2です')
+# import numpy as np
+# score = np.loadtxt('lake.csv',delimiter=',')
+# print(score)
+# print(f'平均深度は{np.mean(score[:,1])}mです')
+# print(f'最大面積は{np.max(score[:,0])}m^2です')
