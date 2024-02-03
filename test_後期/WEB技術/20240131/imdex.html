@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <script LANGUAGE="JavaScript">
+        //  足し算の関数calc の定義     
+        function calc(f) { f.z.value = eval(f.x.value) + eval(f.y.value); } 
+    </script>
+</head>
+<form method="POST"> 
+    ボタン<input type="button" value="計算" onClick="calc(this.form)"><BR> 
+        入力用ボックス <input type="text" size=10 name="x">
+    + <input type="text" size=10 name="y">=
+    <input type="text" size=10 name="z">
+    <BR>
+</form>
+
+</html>
