@@ -1,4 +1,4 @@
 import pandas as pd
-
-score = pd.read_csv('data.csv',encoding='utf-8')
+import os
+score = pd.read_csv(f'{os.path.dirname(__file__)}\data.csv',encoding='utf-8')
 print(score)
