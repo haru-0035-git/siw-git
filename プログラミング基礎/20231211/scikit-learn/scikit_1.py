@@ -28,9 +28,9 @@ from sklearn.metrics import accuracy_score,confusion_matrix,classification_repor
 pred = model.predict(test_X)
 score = accuracy_score(iris.target_names[test_Y], pred)
 
-# print('score:%s' % score)
-# print(classification_report(iris.target_names[test_Y], pred))
-# print(confusion_matrix(iris.target_names[test_Y], pred))
+print('score:%s' % score)
+print(classification_report(iris.target_names[test_Y], pred))
+print(confusion_matrix(iris.target_names[test_Y], pred))
 
 
 #ロジスティック回帰

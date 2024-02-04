@@ -1,3 +1,4 @@
+import time 
 class Universe():
     def __init__(self,name):
         self.name = name
@@ -8,3 +9,5 @@ class Universe():
         
 ship1 = Universe('はやぶさ')
 ship1.take_off()
+time.sleep(2)
+ship1.landing()
