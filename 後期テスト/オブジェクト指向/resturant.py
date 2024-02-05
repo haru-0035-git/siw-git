@@ -1,3 +1,5 @@
+import sys
+sys.dont_write_bytecode = True
 from menu import Menu,Omurais,Hanbarg,Sterk
 class Cooking:
     def __init__(self):
