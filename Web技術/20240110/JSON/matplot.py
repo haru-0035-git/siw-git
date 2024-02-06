@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt  
-import json,japanize_matplotlib 
+import json,matplotlib_fontja
 import os
 # values = [60, 30,10] 
 # labels = ['A', 'B', 'C'] 

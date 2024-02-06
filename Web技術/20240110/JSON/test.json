@@ -1,14 +1,11 @@
-[
-    {
-        "name": "Aoki",
-        "age": 30
+{
+    "AOKI":{
+        "age":30
     },
-    {
-        "name": "Isida",
-        "age": 32
+    "Isida":{
+        "age":32
     },
-    {
-        "name": "Tori",
-        "age": 29
+    "Tori":{
+        "age":29
     }
-]
+}

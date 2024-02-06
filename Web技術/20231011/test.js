@@ -1,23 +1,27 @@
-// for (x=0; x<=180;x=x+10){
-//     s=Math.sin(x*Math.PI/180);
-//     document.write(x,',',s,'<br>');
-// }
+// for文
 
-// function spc(n){
-//     s='';
-//     for (i=0;i<n;i++)
-//     s=s+'　';
-//     return s;
-// }
+for (x=0; x<=180;x=x+10){
+    s=Math.sin(x*Math.PI/180);
+    document.write(x,',',s,'<br>');
+}
+
+function spc(n){
+    s='';
+    for (i=0;i<n;i++)
+    s=s+'　';
+    return s;
+}
 
 
-// document.write("<pre>")
-// document.write('\t-1.........+........0.........+..........1<br><br>');
-// for (x=0;x<=360;x=x+20){
-//     ts=10*Math.sin(x*Math.PI/180)+10;
-//     document.write(x,'\t',spc(ts),'*<br>')
-// }
-// document.write('</pre>')
+document.write("<pre>")
+document.write('\t-1.........+........0.........+..........1<br><br>');
+for (x=0;x<=360;x=x+20){
+    ts=10*Math.sin(x*Math.PI/180)+10;
+    document.write(x,'\t',spc(ts),'*<br>')
+}
+document.write('</pre>')
+
+//if文とrandom
 
 let d = 0
 let ki = 0

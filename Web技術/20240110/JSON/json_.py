@@ -1,5 +1,5 @@
 # import json
-import os
+# import os
 # items = [
 #     {'name':'Aoki','age':30},
 #     {'name':'Isida','age':32},
@@ -44,19 +44,19 @@ import os
 # plt.show()
 
 
-import json, requests, japanize_matplotlib 
-import matplotlib.pyplot as plt  
-# Web API から好きなOS に関するJSON データを取得 
-url = 'https://api.aoikujira.com/like/api.php?m=get&item_id=8' 
-r = requests.get(url)  
-# 取得したJSON をPython で扱えるように変換 
-data = json.loads(r.text)  
-# グラフ描画のためにデータを分ける 
-labels, values = [], [] 
-for it in data['answers']:     
-    labels.append(it['label'])     
-    values.append(it['point'])  
-#    グラフを描画 
-plt.barh(labels, values) 
-plt.title('好きなOS は?')  
-plt.show()
+# import json, requests, japanize_matplotlib 
+# import matplotlib.pyplot as plt  
+# # Web API から好きなOS に関するJSON データを取得 
+# url = 'https://api.aoikujira.com/like/api.php?m=get&item_id=8' 
+# r = requests.get(url)  
+# # 取得したJSON をPython で扱えるように変換 
+# data = json.loads(r.text)  
+# # グラフ描画のためにデータを分ける 
+# labels, values = [], [] 
+# for it in data['answers']:     
+#     labels.append(it['label'])     
+#     values.append(it['point'])  
+# #    グラフを描画 
+# plt.barh(labels, values) 
+# plt.title('好きなOS は?')  
+# plt.show()
