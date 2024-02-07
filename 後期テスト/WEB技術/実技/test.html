@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="500" height="500">
+            
+        </canvas>
+        <script>
+        canvas = document.getElementById("myCanvas");
+        ctx = canvas.getContext("2d");
+        // // 塗りつぶしのある青い円の描写
+        // ctx.beginPath();
+        // ctx.arc(100, 100, 70, 0, Math.PI*2, false);
+        // ctx.fillStyle = "#0000FF";
+        // ctx.fill();
+        // ctx.closePath();
+        //円の描写
+        ctx.beginPath();
+        ctx.arc(100,100,70,0, Math.PI*2 ,true);
+        // ctx.fillSytle = '#0000ff';
+        // ctx.fill();
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(100,110,60,0, Math.PI*2 ,true);
+        // ctx.fillSytle = '#000000';
+        // ctx.fill();
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.ellipse(82,60,20,15,Math.PI/2,0,Math.PI*2);
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.ellipse(117,60,20,15,Math.PI/2,0,Math.PI*2);
+        ctx.closePath();
+        ctx.stroke();
+        
+        
+        ctx.beginPath();
+        ctx.arc(92,60,5,0, Math.PI*2 ,true);
+        ctx.closePath();
+        ctx.fillSytle = '#ffffff';
+        ctx.fill();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(107,60,5,0, Math.PI*2 ,true);
+        ctx.fillSytle = '#0000ff';
+        ctx.fill();
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(100,85,10,0, Math.PI*2 ,false);
+        ctx.fillSytle = '#ff0000';
+        ctx.fill();
+        ctx.closePath();
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(100, 95);
+        ctx.lineTo(100,110);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.arc(100,110,30,0, -Math.PI ,false);
+        ctx.closePath();
+        ctx.fillStyle = '#ff0000';
+        ctx.fill()
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(60, 95);
+        ctx.lineTo(20,70);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(60, 110);
+        ctx.lineTo(20,110);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(60, 125);
+        ctx.lineTo(20,140);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(140, 95);
+        ctx.lineTo(180,70);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+        
+        ctx.beginPath();
+        ctx.moveTo(140, 110);
+        ctx.lineTo(180,110);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(140, 125);
+        ctx.lineTo(180,140);
+        ctx.strokeStyle = '#000000';
+        ctx.fill()
+        ctx.stroke();
+        
+        
+        </script>
+</body>
+</html>

@@ -46,7 +46,7 @@ if len(menu_list) == 0:
     print('注文がキャンセルされました')
 else:
     time.sleep(3)
-    print('調理が完成しました')
+    print('料理が完成しました')
 
 # from menu import Menu,Omurais,Hanbarg,Sterk
 # from resturant import Cooking
